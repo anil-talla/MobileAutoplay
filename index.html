@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
-<body>
+<head>
+<script>
+function loadVideo(){
+   var video = document.getElementById("getVideo");
+   video.play();
+};
+</script>
+
+</head>
+<body onload="loadVideo()">
+
 <video id="getVideo" width="320" height="240" muted>
   <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
   <source src="https://www.w3schools.com/tags/movie.ogg" type="video/ogg">
@@ -9,12 +19,6 @@
 
 <p><strong>Note:</strong> The video tag is not supported in Internet Explorer 8 and earlier versions.</p>
 
-<script>
-document.addEventListener("domContentLoaded", function(){
-   var video = document.getElementById("getVideo");
-   video.play();
-});
-</script>
 
 </body>
 </html>

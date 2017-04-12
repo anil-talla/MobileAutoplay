@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-function loadVideo(){
-   var video = document.getElementById("getVideo");
-   video.play();
-};
-</script>
 
 </head>
 <body onload="loadVideo()">
 
-<video id="getVideo" width="320" height="240" muted>
+<video id="getVideo" width="320" height="240" muted autoplay controls>
   <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
   <source src="https://www.w3schools.com/tags/movie.ogg" type="video/ogg">
   Your browser does not support the video tag.
@@ -20,5 +14,15 @@ function loadVideo(){
 <p><strong>Note:</strong> The video tag is not supported in Internet Explorer 8 and earlier versions.</p>
 
 
+<script>
+var video = document.querySelector('video');
+// use the whole window and a *named function*
+window.addEventListener('touchstart', function videoStart() {
+  video.play();
+  console.log('first touch');
+  // remove from the window and call the function we are removing
+  this.removeEventListener('touchstart', videoStart);
+});
+</script>
 </body>
 </html>
